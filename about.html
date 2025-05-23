@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O FinansoWiz - Oskar Wiśniewski</title>
+    <meta name="description"
+        content="Dowiedz się więcej o projekcie FinansoWiz, jego twórcy Oskarze Wiśniewskim oraz technologiach użytych do stworzenia kalkulatorów finansowych.">
+    <link rel="stylesheet" href="css/style.css"> <!-- Wspólny CSS -->
+    <link rel="stylesheet" href="css/animations.css"> <!-- Wspólne Animacje -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dodatkowe style specyficzne dla strony "O nas", jeśli potrzebne */
+        .about-page-section {
+            padding: 120px 0 60px;
+            /* Dostosuj padding, aby uwzględnić header */
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-card img.profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+        }
+
+        .profile-card h1,
+        .profile-card h2 {
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .profile-card h1 {
+            font-size: 2.2rem;
+        }
+
+        .profile-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .profile-card p {
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            font-size: 1.8rem;
+            color: var(--gray-500);
+            margin: 0 0.75rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .section-box {
+            background: var(--gray-50);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .section-box h3 {
+            font-size: 1.4rem;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .tech-stack span {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            margin: 0.3rem;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .back-to-calc-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-to-calc-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Kopiuj nagłówek (header) z index.html dla spójności -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>FinansoWiz</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Główna</a></li>
+                <li><a href="index.html#calculators" class="nav-link">Kalkulatory</a></li>
+                <li><a href="index.html#education" class="nav-link">Edukacja</a></li>
+                <li><a href="about.html" class="nav-link active">O nas</a></li> <!-- Oznacz jako aktywny -->
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-page-section">
+            <div class="about-container">
+                <div class="profile-card">
+                    <!-- Możesz tu wstawić swoje zdjęcie -->
+                    <img src="/Users/oskareczqu/Downloads/IMG_3660.jpeg" alt="Oskar Wiśniewski" class="profile-pic">
+
+
+                    <h1>Oskar Wiśniewski</h1>
+                    <h2>Twórca FinansoWiz</h2>
+                    <p>
+                        Cześć! Jestem Oskar, pasjonat technologii i finansów. Stworzyłem FinansoWiz, aby dostarczyć
+                        proste i intuicyjne narzędzia, które pomogą Ci lepiej zarządzać swoimi finansami osobistymi i
+                        podejmować świadome decyzje inwestycyjne.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/oskareczq" target="_blank" title="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/oskar-wi%C5%9Bniewski-16816826b/" target="_blank"
+                            title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <!-- Dodaj inne linki, np. do portfolio -->
+                        <!-- <a href="https://twojastrona.pl" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="section-box">
+                    <h3>O Projekcie FinansoWiz</h3>
+                    <p>
+                        FinansoWiz to zestaw kalkulatorów finansowych online, zaprojektowanych z myślą o przejrzystości
+                        i łatwości użytkowania. Niezależnie od tego, czy planujesz oszczędności, analizujesz opcje
+                        kredytowe, czy eksplorujesz świat inwestycji, mam nadzieję, że te narzędzia okażą się pomocne.
+                    </p>
+                    <p>
+                        Projekt powstał z chęci połączenia moich zainteresowań programowaniem z praktyczną wiedzą
+                        finansową. Stale pracuję nad jego rozwojem, dodając nowe funkcje i ulepszając istniejące
+                        kalkulatory.
+                    </p>
+                </div>
+
+                <div class="section-box">
+                    <h3>Technologie</h3>
+                    <p>FinansoWiz został zbudowany przy użyciu następujących technologii:</p>
+                    <div class="tech-stack">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript (ES6+)</span>
+                        <span>Chart.js</span>
+                        <span>Font Awesome</span>
+                    </div>
+                    <p style="margin-top: 1rem;">
+                        Kod źródłowy projektu jest dostępny na moim GitHubie – zachęcam do zapoznania się i ewentualnego
+                        wkładu!
+                    </p>
+                </div>
+
+                <div class="section-box">
+                    <h3>Kontakt</h3>
+                    <p>
+                        Masz pytania, sugestie, a może znalazłeś błąd? Skontaktuj się ze mną poprzez:
+                    </p>
+                    <p>
+                        <strong>Email:</strong> <a
+                            href="mailto:oskarwisniewski3@gmail.com">oskarwisniewski3@gmail.com</a>
+                    </p>
+                    <p>
+                        Możesz również otworzyć "Issue" na <a
+                            href="https://github.com/oskareczq/DefaultPrediction_XGBoost_RF_LogReg/issues"
+                            target="_blank">GitHubie projektu</a>.
+                    </p>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="index.html#calculators" class="back-to-calc-btn"><i class="fas fa-arrow-left"></i> Wróć do
+                        kalkulatorów</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Kopiuj stopkę (footer) z index.html dla spójności -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FinanceCalc</h4>
+                    <p>Profesjonalne narzędzia do planowania finansowego i inwestycyjnego dla każdego.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Nawigacja</h4>
+                    <ul>
+                        <li><a href="index.html#home">Główna</a></li>
+                        <li><a href="index.html#calculators">Kalkulatory</a></li>
+                        <li><a href="index.html#education">Edukacja</a></li>
+                        <li><a href="about.html">O nas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Email: <a href="mailto:oskarwisniewski3@gmail.com"
+                            style="color: var(--gray-400);">oskarwisniewski3@gmail.com</a></p>
+                    <!-- <p>Tel: +48 123 456 789</p> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinansoWiz by Oskar Wiśniewski. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wspólny JavaScript dla nawigacji itp. -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Finansowy Online - Procent Składany, Kredyty, Inwestycje | FinansoWiz by Oskar Wisniewski</title>
+    <meta name="description"
+        content="Profesjonalne kalkulatory finansowe online: procent składany, kredyty hipoteczne, inwestycje, oszczędności, emerytury. Darmowe narzędzia z wykresami i analizami.">
+    <meta name="keywords"
+        content="kalkulator finansowy, procent składany, kredyt hipoteczny, inwestycje, oszczędności, emerytura, kalkulator online, edukacja finansowa, inwestowanie, finanse osobiste">
+
+    <!-- Favicony -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Dodatkowe style dla nowych sekcji, można przenieść do style.css */
+        .recommended-materials-section {
+            padding: 60px 0;
+            background-color: var(--gray-50);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .material-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .material-card .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .material-card h4 {
+            font-size: 1.25rem;
+            color: var(--gray-800);
+            margin-bottom: 0.75rem;
+        }
+
+        .material-card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .material-card .material-link-btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .material-card .material-link-btn:hover {
+            background-color: var(--accent-color-dark);
+        }
+
+        .material-category-title {
+            font-size: 1.8rem;
+            color: var(--gray-700);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .education-card ul.benefits-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>FinansoWiz by Oskar
+                        Wiśniewski</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Główna</a></li>
+                <li><a href="#calculators" class="nav-link">Kalkulatory</a></li>
+                <li><a href="#education" class="nav-link">Edukacja</a></li>
+                <li><a href="#recommended-materials" class="nav-link">Polecane Materiały</a></li>
+                <li><a href="about.html" class="nav-link">O nas</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Kalkulatory Finansowe Online</h1>
+                    <p class="hero-subtitle">Kompleksowe narzędzia do planowania finansowego: kredyty, inwestycje,
+                        oszczędności i emerytury z profesjonalnymi wykresami</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button primary" onclick="scrollToSection('calculators')">
+                            <i class="fas fa-calculator"></i>
+                            Rozpocznij obliczenia
+                        </button>
+                        <button class="cta-button secondary" onclick="scrollToSection('education')">
+                            <i class="fas fa-graduation-cap"></i>
+                            Dowiedz się więcej
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-animation">
+                    <div class="floating-elements">
+                        <div class="element element-1">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="element element-2">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="element element-3">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="element element-4">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="element element-5">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="element element-6">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="element element-7">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculators" class="calculators-section">
+            <div class="container">
+                <h2 class="section-title">Kalkulatory Finansowe</h2>
+
+                <!-- Calculator Tabs -->
+                <div class="calculator-tabs">
+                    <button class="tab-button active" onclick="switchTab('compound')">
+                        <i class="fas fa-chart-line"></i>
+                        Procent Składany
+                    </button>
+                    <button class="tab-button" onclick="switchTab('investment')">
+                        <i class="fas fa-coins"></i>
+                        Inwestycje
+                    </button>
+                    <button class="tab-button" onclick="switchTab('savings')">
+                        <i class="fas fa-piggy-bank"></i>
+                        Oszczędności
+                    </button>
+                    <button class="tab-button" onclick="switchTab('loan')">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        Kredyt Hipoteczny
+                    </button>
+                    <button class="tab-button" onclick="switchTab('retirement')">
+                        <i class="fas fa-user-clock"></i>
+                        Emerytura
+                    </button>
+                    <button class="tab-button" onclick="switchTab('car-loan')">
+                        <i class="fas fa-car"></i>
+                        Leasing
+                    </button>
+                </div>
+
+                <!-- Compound Interest Calculator -->
+                <div id="compound" class="calculator-content active">
+                    <div class="calculator-layout">
+                        <div class="calculator-inputs">
+                            <h3>Kalkulator Procentu Składanego</h3>
+
+                            <div class="input-group">
+                                <label for="initial-amount">Kwota początkowa (PLN)</label>
+                                <input type="number" id="initial-amount" value="100000" min="0" step="100"
+                                    onchange="calculateCompound()" oninput="calculateCompound()">
+                                <div class="input-slider">
+                                    <input type="range" id="initial-slider" min="0" max="1000000" value="100000"
+                                        step="1000"
+                                        onchange="syncSlider('initial-amount', this.value); calculateCompound();"
+                                        oninput="syncSlider('initial-amount', this.value); calculateCompound();">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="monthly-contribution">Regularna wpłata (PLN)</label>
+                                <input type="number" id="monthly-contribution" value="1000" min="0" step="50"
+                                    onchange="calculateCompound()" oninput="calculateCompound()">
+                                <div class="input-slider">
+                                    <input type="range" id="monthly-slider" min="0" max="5000" value="1000" step="50"
+                                        onchange="syncSlider('monthly-contribution', this.value); calculateCompound();"
+                                        oninput="syncSlider('monthly-contribution', this.value); calculateCompound();">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="contribution-frequency">Częstotliwość wpłat</label>
+                                <select id="contribution-frequency" onchange="calculateCompound()">
+                                    <option value="12" selected>Miesięczne</option>
+                                    <!-- Upewnienie się, że miesięczne jest domyślne -->
+                                    <option value="4">Kwartalne</option>
+                                    <option value="1">Roczne</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="interest-rate">Roczna stopa procentowa (%)</label>
+                                <input type="number" id="interest-rate" value="7" min="-99.99" max="50" step="0.1"
+                                    onchange="calculateCompound()" oninput="calculateCompound()">
+                                <div class="input-slider">
+                                    <input type="range" id="rate-slider" min="-50" max="50" value="7" step="0.1"
+                                        onchange="syncSlider('interest-rate', this.value); calculateCompound();"
+                                        oninput="syncSlider('interest-rate', this.value); calculateCompound();">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="time-period">Okres inwestycji (lata)</label>
+                                <input type="number" id="time-period" value="10" min="1" max="100" step="1"
+                                    onchange="calculateCompound()" oninput="calculateCompound()">
+                                <div class="input-slider">
+                                    <input type="range" id="time-slider" min="1" max="100" value="10" step="1"
+                                        onchange="syncSlider('time-period', this.value); calculateCompound();"
+                                        oninput="syncSlider('time-period', this.value); calculateCompound();">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="compound-frequency">Kapitalizacja odsetek</label>
+                                <select id="compound-frequency" onchange="calculateCompound()">
+                                    <option value="1" selected>Roczna</option>
+                                    <option value="2">Półroczna</option>
+                                    <option value="4">Kwartalna</option>
+                                    <option value="12">Miesięczna</option>
+                                    <option value="365">Dzienna</option>
+                                </select>
+                            </div>
+
+                            <button class="calculate-btn" onclick="calculateCompound()">
+                                <i class="fas fa-calculator"></i>
+                                Oblicz wyniki
+                            </button>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="results-summary">
+                                <div class="result-card">
+                                    <h4>Końcowa wartość</h4>
+                                    <div class="result-value" id="final-amount">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Łączne wpłaty</h4>
+                                    <div class="result-value" id="total-contributions">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Zysk z odsetek</h4>
+                                    <div class="result-value" id="interest-earned">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Zwrot z inwestycji</h4>
+                                    <div class="result-value" id="roi-percentage">0%</div>
+                                </div>
+                            </div>
+                            <div class="chart-controls">
+                                <h4>Opcje wykresu</h4>
+                                <div class="chart-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="chart-type" value="bar" checked
+                                            onchange="calculateCompound()">
+                                        <span>Wykres słupkowy</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="chart-type" value="line"
+                                            onchange="calculateCompound()">
+                                        <span>Wykres liniowy</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <canvas id="compound-chart"></canvas>
+                            </div>
+
+                            <div class="breakdown-table">
+                                <h4>Szczegółowe zestawienie</h4>
+                                <div class="table-container">
+                                    <table id="breakdown-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Okres</th>
+                                                <th>Wpłaty</th>
+                                                <th>Odsetki</th>
+                                                <th>Saldo końcowe</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="breakdown-tbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Calculator -->
+                <div id="investment" class="calculator-content">
+                    <div class="calculator-layout">
+                        <div class="calculator-inputs">
+                            <h3>Kalkulator Inwestycji</h3>
+
+                            <div class="input-group">
+                                <label for="inv-initial">Kapitał początkowy (PLN)</label>
+                                <input type="number" id="inv-initial" value="50000" min="0" step="1000"
+                                    onchange="calculateInvestment()" oninput="calculateInvestment()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="inv-monthly">Miesięczna inwestycja (PLN)</label>
+                                <input type="number" id="inv-monthly" value="1000" min="0" step="100"
+                                    onchange="calculateInvestment()" oninput="calculateInvestment()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="inv-return">Oczekiwany zwrot roczny (%)</label>
+                                <input type="number" id="inv-return" value="8" min="-99.99" max="50" step="0.5"
+                                    onchange="calculateInvestment()" oninput="calculateInvestment()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="inv-years">Horyzont inwestycyjny (lata)</label>
+                                <input type="number" id="inv-years" value="25" min="1" max="100" step="1"
+                                    onchange="calculateInvestment()" oninput="calculateInvestment()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="inflation-rate">Inflacja roczna (%)</label>
+                                <input type="number" id="inflation-rate" value="3" min="0" max="20" step="0.1"
+                                    onchange="calculateInvestment()" oninput="calculateInvestment()">
+                            </div>
+
+                            <button class="calculate-btn" onclick="calculateInvestment()">
+                                <i class="fas fa-chart-area"></i>
+                                Oblicz inwestycję
+                            </button>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="results-summary">
+                                <div class="result-card">
+                                    <h4>Wartość nominalna</h4>
+                                    <div class="result-value" id="inv-nominal">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Wartość realna</h4>
+                                    <div class="result-value" id="inv-real">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Zysk nominalny</h4>
+                                    <div class="result-value" id="inv-profit">0 PLN</div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="investment-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Savings Calculator -->
+                <div id="savings" class="calculator-content">
+                    <div class="calculator-layout">
+                        <div class="calculator-inputs">
+                            <h3>Kalkulator Oszczędności</h3>
+
+                            <div class="input-group">
+                                <label for="savings-goal">Cel oszczędnościowy (PLN)</label>
+                                <input type="number" id="savings-goal" value="100000" min="1" step="1000"
+                                    onchange="calculateSavings()" oninput="calculateSavings()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="savings-current">Obecne oszczędności (PLN)</label>
+                                <input type="number" id="savings-current" value="5000" min="0" step="500"
+                                    onchange="calculateSavings()" oninput="calculateSavings()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="savings-monthly">Miesięczne oszczędności (PLN)</label>
+                                <input type="number" id="savings-monthly" value="800" min="0" step="50"
+                                    onchange="calculateSavings()" oninput="calculateSavings()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="savings-rate">Oprocentowanie roczne (%)</label>
+                                <input type="number" id="savings-rate" value="4" min="0" max="30" step="0.1"
+                                    onchange="calculateSavings()" oninput="calculateSavings()">
+                            </div>
+
+                            <button class="calculate-btn" onclick="calculateSavings()">
+                                <i class="fas fa-piggy-bank"></i>
+                                Oblicz oszczędności
+                            </button>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="results-summary">
+                                <div class="result-card">
+                                    <h4>Czas do celu</h4>
+                                    <div class="result-value" id="savings-time">0 lat</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Łączne wpłaty</h4>
+                                    <div class="result-value" id="savings-total">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Zysk z odsetek</h4>
+                                    <div class="result-value" id="savings-interest">0 PLN</div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="savings-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Calculator -->
+                <div id="loan" class="calculator-content">
+                    <div class="calculator-layout">
+                        <div class="calculator-inputs">
+                            <h3>Kalkulator Kredytu Hipotecznego</h3>
+
+                            <div class="input-group">
+                                <label for="loan-amount">Kwota kredytu (PLN)</label>
+                                <input type="number" id="loan-amount" value="300000" min="1000" step="5000"
+                                    onchange="calculateLoan()" oninput="calculateLoan()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="loan-rate">Oprocentowanie roczne (%)</label>
+                                <input type="number" id="loan-rate" value="6.5" min="0.1" max="30" step="0.1"
+                                    onchange="calculateLoan()" oninput="calculateLoan()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="loan-years">Okres spłaty (lata)</label>
+                                <input type="number" id="loan-years" value="25" min="1" max="50" step="1"
+                                    onchange="calculateLoan()" oninput="calculateLoan()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="loan-type">Typ rat</label>
+                                <select id="loan-type" onchange="calculateLoan()">
+                                    <option value="equal">Równe (annuitetowe)</option>
+                                    <option value="decreasing">Malejące</option>
+                                </select>
+                            </div>
+
+                            <button class="calculate-btn" onclick="calculateLoan()">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                Oblicz kredyt
+                            </button>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="results-summary">
+                                <div class="result-card">
+                                    <h4>Miesięczna rata</h4>
+                                    <div class="result-value" id="loan-payment">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Łączny koszt</h4>
+                                    <div class="result-value" id="loan-total">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Łączne odsetki</h4>
+                                    <div class="result-value" id="loan-interest">0 PLN</div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="loan-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retirement Calculator -->
+                <div id="retirement" class="calculator-content">
+                    <div class="calculator-layout">
+                        <div class="calculator-inputs">
+                            <h3>Kalkulator Emerytury</h3>
+
+                            <div class="input-group">
+                                <label for="current-age">Obecny wiek</label>
+                                <input type="number" id="current-age" value="30" min="18" max="80" step="1"
+                                    onchange="calculateRetirement()" oninput="calculateRetirement()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="retirement-age">Wiek emerytalny</label>
+                                <input type="number" id="retirement-age" value="65" min="19" max="100" step="1"
+                                    onchange="calculateRetirement()" oninput="calculateRetirement()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="current-savings">Obecne oszczędności emerytalne (PLN)</label>
+                                <input type="number" id="current-savings" value="50000" min="0" step="1000"
+                                    onchange="calculateRetirement()" oninput="calculateRetirement()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="monthly-retirement">Miesięczna wpłata (PLN)</label>
+                                <input type="number" id="monthly-retirement" value="1000" min="0" step="100"
+                                    onchange="calculateRetirement()" oninput="calculateRetirement()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="retirement-return">Oczekiwany zwrot roczny (%)</label>
+                                <input type="number" id="retirement-return" value="6" min="-99.99" max="30" step="0.1"
+                                    onchange="calculateRetirement()" oninput="calculateRetirement()">
+                            </div>
+
+                            <button class="calculate-btn" onclick="calculateRetirement()">
+                                <i class="fas fa-user-clock"></i>
+                                Oblicz emeryturę
+                            </button>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="results-summary">
+                                <div class="result-card">
+                                    <h4>Kapitał na emeryturze</h4>
+                                    <div class="result-value" id="retirement-capital">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Miesięczny dochód</h4>
+                                    <div class="result-value" id="retirement-income">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Lata do emerytury</h4>
+                                    <div class="result-value" id="years-to-retirement">0 lat</div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="retirement-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Loan Calculator -->
+                <div id="car-loan" class="calculator-content">
+                    <div class="calculator-layout">
+                        <div class="calculator-inputs">
+                            <h3>Kalkulator Leasingu</h3>
+
+                            <div class="input-group">
+                                <label for="car-price">Cena przedmiotu leasingu (PLN)</label>
+                                <input type="number" id="car-price" value="80000" min="1000" step="5000"
+                                    onchange="calculateCarLoan()" oninput="calculateCarLoan()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="down-payment">Wpłata własna (PLN)</label>
+                                <input type="number" id="down-payment" value="20000" min="0" step="1000"
+                                    onchange="calculateCarLoan()" oninput="calculateCarLoan()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="car-loan-rate">Oprocentowanie roczne (%)</label>
+                                <input type="number" id="car-loan-rate" value="8.5" min="0.1" max="30" step="0.1"
+                                    onchange="calculateCarLoan()" oninput="calculateCarLoan()">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="car-loan-years">Okres leasingu (lata)</label>
+                                <input type="number" id="car-loan-years" value="5" min="1" max="15" step="1"
+                                    onchange="calculateCarLoan()" oninput="calculateCarLoan()">
+                            </div>
+
+                            <button class="calculate-btn" onclick="calculateCarLoan()">
+                                <i class="fas fa-car"></i>
+                                Oblicz ratę leasingu
+                            </button>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="results-summary">
+                                <div class="result-card">
+                                    <h4>Miesięczna rata</h4>
+                                    <div class="result-value" id="car-monthly-payment">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Łączny koszt</h4>
+                                    <div class="result-value" id="car-total-cost">0 PLN</div>
+                                </div>
+                                <div class="result-card">
+                                    <h4>Łączne odsetki</h4>
+                                    <div class="result-value" id="car-total-interest">0 PLN</div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="car-loan-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section - ROZBUDOWANA -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <h2 class="section-title">Akademia Finansowa FinansoWiz</h2>
+                <p class="section-subtitle">Zdobądź wiedzę, która pozwoli Ci podejmować mądre decyzje finansowe i
+                    budować swoją przyszłość.</p>
+
+                <h3 class="material-category-title">Dla Początkujących</h3>
+                <div class="education-grid">
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                        <h3>Zarządzanie Budżetem Domowym</h3>
+                        <p>Naucz się tworzyć i kontrolować budżet domowy. Dowiedz się, jak śledzić wydatki,
+                            identyfikować obszary oszczędności i planować finanse, aby osiągnąć swoje cele.</p>
+                        <ul class="benefits-list">
+                            <li>Poznaj metody budżetowania (np. 50/30/20).</li>
+                            <li>Narzędzia do śledzenia wydatków.</li>
+                            <li>Jak unikać impulsywnych zakupów.</li>
+                            <li>Znaczenie regularnego przeglądu budżetu.</li>
+                        </ul>
+                    </div>
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
+                        <h3>Poduszka Finansowa - Twój Spokój</h3>
+                        <p>Dowiedz się, dlaczego fundusz awaryjny jest kluczowy dla stabilności finansowej i jak go
+                            zbudować. Określ, ile powinieneś zaoszczędzić na nieprzewidziane wydatki.</p>
+                        <ul class="benefits-list">
+                            <li>Cel poduszki finansowej (3-6 mies. wydatków).</li>
+                            <li>Gdzie przechowywać fundusz awaryjny.</li>
+                            <li>Kiedy korzystać z poduszki.</li>
+                            <li>Automatyzacja oszczędzania.</li>
+                        </ul>
+                    </div>
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-credit-card"></i></div>
+                        <h3>Mądre Zarządzanie Długiem</h3>
+                        <p>Zrozumienie różnych rodzajów długu (kredyty, karty kredytowe) i jak unikać pułapki
+                            zadłużenia. Poznaj strategie spłaty długów, takie jak metoda kuli śnieżnej czy lawiny.</p>
+                        <ul class="benefits-list">
+                            <li>RRSO – co to jest i na co zwracać uwagę.</li>
+                            <li>Jak działa karta kredytowa.</li>
+                            <li>Konsolidacja kredytów.</li>
+                            <li>Budowanie pozytywnej historii kredytowej.</li>
+                        </ul>
+                    </div>
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                        <h3>Oszczędzanie vs Inwestowanie</h3>
+                        <p>Poznaj kluczowe różnice między oszczędzaniem a inwestowaniem. Zrozum, kiedy wybrać lokatę, a
+                            kiedy rozważyć bardziej dynamiczne formy pomnażania kapitału.</p>
+                        <ul class="benefits-list">
+                            <li>Cele krótko- i długoterminowe.</li>
+                            <li>Ryzyko a potencjalny zysk.</li>
+                            <li>Rola inflacji.</li>
+                            <li>Pierwsze kroki w inwestowaniu.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="material-category-title">Dla Średniozaawansowanych i Zaawansowanych</h3>
+                <div class="education-grid">
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h3>Dywersyfikacja Portfela Inwestycyjnego</h3>
+                        <p>Zrozum, dlaczego "nie wkładać wszystkich jajek do jednego koszyka" to złota zasada
+                            inwestowania. Dowiedz się, jak budować zdywersyfikowany portfel, aby zminimalizować ryzyko.
+                        </p>
+                        <ul class="benefits-list">
+                            <li>Różne klasy aktywów (akcje, obligacje, nieruchomości, surowce).</li>
+                            <li>Korelacja między aktywami.</li>
+                            <li>Rola ETF-ów w dywersyfikacji.</li>
+                            <li>Rebalansowanie portfela.</li>
+                        </ul>
+                    </div>
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-search-dollar"></i></div>
+                        <h3>Wprowadzenie do Analizy Fundamentalnej</h3>
+                        <p>Poznaj podstawy oceny wartości wewnętrznej spółek. Dowiedz się, jakie wskaźniki (np. C/Z,
+                            C/WK, EPS) i dane finansowe analizować przed podjęciem decyzji inwestycyjnej.</p>
+                        <ul class="benefits-list">
+                            <li>Analiza bilansu, rachunku zysków i strat.</li>
+                            <li>Wskaźniki rentowności, płynności, zadłużenia.</li>
+                            <li>Ocena przewag konkurencyjnych (fosa).</li>
+                            <li>Analiza otoczenia makroekonomicznego.</li>
+                        </ul>
+                    </div>
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Psychologia Inwestowania</h3>
+                        <p>Naucz się panować nad emocjami, które często prowadzą do błędnych decyzji inwestycyjnych.
+                            Zrozumienie pułapek behawioralnych, takich jak FOMO czy awersja do straty.</p>
+                        <ul class="benefits-list">
+                            <li>Efekt stadny i jego unikanie.</li>
+                            <li>Znaczenie dyscypliny i cierpliwości.</li>
+                            <li>Pułapka nadmiernej pewności siebie.</li>
+                            <li>Ustalanie realistycznych oczekiwań.</li>
+                        </ul>
+                    </div>
+                    <div class="education-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <h3>Strategie Inwestycyjne</h3>
+                        <p>Przegląd popularnych strategii inwestycyjnych, takich jak inwestowanie w wartość (value
+                            investing), wzrostowe (growth investing) czy uśrednianie kosztów (DCA - Dollar Cost
+                            Averaging).</p>
+                        <ul class="benefits-list">
+                            <li>Inwestowanie pasywne vs aktywne.</li>
+                            <li>Horyzont inwestycyjny a wybór strategii.</li>
+                            <li>Rola podatków w inwestowaniu.</li>
+                            <li>Kiedy modyfikować strategię.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOWA SEKCJA: Polecane Materiały -->
+        <section id="recommended-materials" class="recommended-materials-section">
+            <div class="container">
+                <h2 class="section-title">Polecane Materiały Edukacyjne</h2>
+                <p class="section-subtitle">Rozwijaj swoją wiedzę finansową korzystając z wartościowych blogów, kanałów
+                    YouTube i stron internetowych.</p>
+
+                <h3 class="material-category-title"><i class="fab fa-youtube"
+                        style="margin-right: 10px; color: var(--danger-color);"></i>Kanały YouTube (PL)</h3>
+                <div class="materials-grid">
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+                        <h4>Marcin Iwuć - Finanse Bardzo Osobiste</h4>
+                        <p>Praktyczne porady dotyczące finansów osobistych, oszczędzania, inwestowania i
+                            przedsiębiorczości. Klarowne wyjaśnienia i konkretne strategie.</p>
+                        <a href="https://www.youtube.com/c/MarcinIwu%C4%87FBO" target="_blank"
+                            class="material-link-btn">Odwiedź kanał <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Zawód Inwestor</h4>
+                        <p>Kanał skupiający się na analizie rynków, spółek giełdowych oraz strategiach inwestycyjnych.
+                            Dużo konkretnej wiedzy dla aktywnych inwestorów.</p>
+                        <a href="https://www.youtube.com/@ZawodInwestor" target="_blank"
+                            class="material-link-btn">Odwiedź kanał <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                        <h4>Piotr Cymcyk</h4>
+                        <p>Analizy makroekonomiczne, komentarze rynkowe oraz spojrzenie na globalne trendy finansowe.
+                            Prowadzony przez doświadczonego analityka.</p>
+                        <a href="https://www.youtube.com/@DNARynkow" target="_blank" class="material-link-btn">Odwiedź
+                            kanał <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h4>Tomasz Trela </h4>
+                        <p>Zaawansowane analizy rynków, inwestycje alternatywne, metale szlachetne. Kontrowersyjny, ale
+                            zmuszający do myślenia content dla doświadczonych.</p>
+                        <a href="https://www.youtube.com/@TomaszTrading" target="_blank"
+                            class="material-link-btn">Odwiedź kanał <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h4>Konrad Ksiązak</h4>
+                        <p>Mówi czym jest dywidenda, jak kupić akcje, jak analizować spółki, co to jest giełda papierów
+                            wartościowych,. Idealny dla początkujących.</p>
+                        <a href="https://www.youtube.com/@GPWnotowania" target="_blank"
+                            class="material-link-btn">Odwiedź kanał <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <h3 class="material-category-title"><i class="fas fa-blog"
+                        style="margin-right: 10px; color: var(--info-color);"></i>Blogi i Strony Finansowe (PL)</h3>
+                <div class="materials-grid">
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+                        <h4>Jak Oszczędzać Pieniądze (Michał Szafrański)</h4>
+                        <p>Jeden z najpopularniejszych blogów o finansach osobistych w Polsce. Mnóstwo praktycznych
+                            porad, analiz produktów finansowych i inspiracji.</p>
+                        <a href="https://jakoszczedzacpieniadze.pl/" target="_blank" class="material-link-btn">Odwiedź
+                            blog <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-book-reader"></i></div>
+                        <h4>Subiektywnie o Finansach (Maciej Samcik)</h4>
+                        <p>Blog interwencyjny i edukacyjny, poruszający tematy związane z bankowością, ubezpieczeniami i
+                            prawami konsumentów na rynku finansowym.</p>
+                        <a href="https://subiektywnieofinansach.pl/" target="_blank" class="material-link-btn">Odwiedź
+                            blog <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4>Inwestomat</h4>
+                        <p>Blog, który skupia się przede wszystkim na wysokiej jakości merytorycznej i budowaniu
+                            społeczności skupionej wokół tematów finansowo-inwestycyjnych.</p>
+                        <a href="https://inwestomat.eu/" target="_blank" class="material-link-btn">Odwiedź stronę <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Finax</h4>
+                        <p>Blog popularnego robodoradcy, zawierający treści edukacyjne na temat inwestowania pasywnego,
+                            planowania emerytalnego i budowania majątku.</p>
+                        <a href="https://finax.eu/pl/blog" target="_blank" class="material-link-btn">Odwiedź blog <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <h3 class="material-category-title"><i class="fas fa-globe"
+                        style="margin-right: 10px; color: var(--success-color);"></i>Instytucje i Portale Edukacyjne
+                </h3>
+                <div class="materials-grid">
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-university"></i></div>
+                        <h4>GPW (Giełda Papierów Wartościowych w Warszawie)</h4>
+                        <p>Oficjalna strona GPW zawiera sekcję edukacyjną z materiałami dla inwestorów, informacjami o
+                            rynku i notowaniach.</p>
+                        <a href="https://www.gpw.pl/biblioteka-gpw-wiecej?gpwl_id=32&title=Opcje+-+edukacja"
+                            target="_blank" class="material-link-btn">Odwiedź stronę <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                        <h4>Narodowy Bank Polski - NBPortal</h4>
+                        <p>Portal edukacyjny NBP oferuje szeroki zakres materiałów na temat ekonomii, finansów, inflacji
+                            i polityki monetarnej.</p>
+                        <a href="https://nbp.pl/" target="_blank" class="material-link-btn">Odwiedź portal <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="material-card scroll-reveal">
+                        <div class="card-icon"><i class="fas fa-balance-scale-right"></i></div>
+                        <h4>Komisja Nadzoru Finansowego - Edukacja</h4>
+                        <p>KNF udostępnia materiały edukacyjne dotyczące bezpiecznego korzystania z usług finansowych i
+                            ostrzeżenia przed ryzykiem. Zawiera take rejestr krótkiej sprzedazy, gdzie widać zajęte
+                            pozycje krótkie wielkich podmiotów</p>
+                        <a href="https://rss.knf.gov.pl/rss_pub/" target="_blank" class="material-link-btn">Odwiedź
+                            stronę <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FinansoWiz</h4>
+                    <p>Profesjonalne narzędzia do planowania finansowego i inwestycyjnego dla każdego.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Nawigacja</h4>
+                    <ul>
+                        <li><a href="index.html#home">Główna</a></li>
+                        <li><a href="index.html#calculators">Kalkulatory</a></li>
+                        <li><a href="index.html#education">Edukacja</a></li>
+                        <li><a href="index.html#recommended-materials">Polecane Materiały</a></li>
+                        <li><a href="about.html">O nas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Email: <a href="mailto:oskarwisniewski3@gmail.com"
+                            style="color: var(--gray-400);">oskarwisniewski3@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinansoWiz by Oskar Wiśniewski. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+
+</html>
